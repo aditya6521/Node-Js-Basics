@@ -1,7 +1,7 @@
 //console.log("Hello");
 //console.log(module);
 
-//const logger=require("./logger.js");
+const logger=require("./logger.js");
 //console.log(logger);
 //logger.log("aditya");
 
@@ -32,10 +32,25 @@ const fs=require("fs");
 //console.log(files);
 
 //asynchronous 
-
+/*
 fs.readdir("./", function(err,files){
     if(err)
     console.log("error",err);
     else
     console.log("result",files);
+});*/
+
+// Event Module
+
+const EventEmitter=require("events");
+const emitter=new EventEmitter();
+
+           // listener
+
+emitter.on("messageLogged", function(){
+    console.log("listener called");
 });
+
+      // raising an event
+emitter.emit("messageLogged");
+
