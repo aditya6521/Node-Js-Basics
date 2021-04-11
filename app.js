@@ -8,10 +8,11 @@
 
 // learning path module
 
-/*const path=require("path");
+/*
+const path=require("path");
 
 var pathObj=path.parse(__filename);
-console.log(pathObj);*/
+console.log(pathObj); */
 
 // learning OS module
 
@@ -30,7 +31,8 @@ const fs=require("fs");
 //const files=fs.readdirSync("./");
 //console.log(files);
 
-//asynchronous
+//asynchronous 
+
 fs.readdir("./", function(err,files){
     if(err)
     console.log("error",err);
