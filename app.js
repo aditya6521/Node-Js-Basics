@@ -1,7 +1,7 @@
 //console.log("Hello");
 //console.log(module);
 
-const logger=require("./logger.js");
+//const logger=require("./logger.js");
 //console.log(logger);
 //logger.log("aditya");
 
@@ -41,6 +41,7 @@ fs.readdir("./", function(err,files){
 });*/
 
 // Event Module
+/*
 
 const EventEmitter=require("events");
 const emitter=new EventEmitter();
@@ -52,4 +53,17 @@ emitter.on("messageLogged", function(){
 });
 
       // raising an event
-emitter.emit("messageLogged");
+emitter.emit("messageLogged");     */
+
+// http
+
+
+const http=require("http");
+
+const server=http.createServer();
+
+server.on("connections", function(socket){
+    console.log("new connection");
+})
+server.listen(3000);
+console.log("listening on port 3000...");
