@@ -53,4 +53,3 @@ emitter.on("messageLogged", function(){
 
       // raising an event
 emitter.emit("messageLogged");
-
