@@ -57,7 +57,7 @@ emitter.emit("messageLogged");     */
 
 // http
 
-
+/*
 const http=require("http");
 
 const server=http.createServer();
@@ -65,5 +65,24 @@ const server=http.createServer();
 server.on("connections", function(socket){
     console.log("new connection");
 })
+server.listen(3000);
+console.log("listening on port 3000..."); */
+
+//http module adding port 3000
+
+const http=require("http");
+
+const server=http.createServer(function(req,res){
+    if(req.url==="/"){
+        res.write("yaY!!! successful");
+        res.end();
+    }
+
+    if(req.url==="/api/courses"){
+        res.write(JSON.stringify([1,2,3]));
+        res.end();
+    }
+});
+
 server.listen(3000);
 console.log("listening on port 3000...");
